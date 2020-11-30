@@ -2,6 +2,7 @@ package com.example.appnetworking
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.getUsers().observe(this, Observer {
            it?.let {
                resource ->
+               Log.d(TAG, "resource status is ${resource.status}")
                when (resource.status) {
                    Status.SUCCESS -> {
                        recyclerView.visibility = View.VISIBLE
