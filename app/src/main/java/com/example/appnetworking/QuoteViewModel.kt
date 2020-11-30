@@ -11,7 +11,6 @@ import kotlinx.coroutines.launch
 
 @ExperimentalCoroutinesApi
 class QuoteViewModel(private val mainRepository: MainRepository) : ViewModel() {
-
     private val _countState = MutableStateFlow(0)
     val countState: StateFlow<Int> = _countState
 
