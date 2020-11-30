@@ -16,10 +16,9 @@ import kotlinx.coroutines.flow.collect
 
 @ExperimentalCoroutinesApi
 class MainActivity : AppCompatActivity() {
-    private lateinit var counter:String
     private lateinit var adapter: MainAdapter
     companion object X {
-        val TAG = "MainActivity"
+        var TAG = "MainActivity"
     }
 
     private val viewModel:QuoteViewModel by lazy {
