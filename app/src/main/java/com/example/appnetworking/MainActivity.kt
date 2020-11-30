@@ -65,8 +65,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView(){
-        counter_plus.setOnClickListener(::incrementCounter)
-        counter_minus.setOnClickListener(::decrementCounter)
+        setCounter();
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         adapter = MainAdapter((arrayListOf()))
@@ -75,6 +74,11 @@ class MainActivity : AppCompatActivity() {
                 (recyclerView.layoutManager as LinearLayoutManager).orientation
         ))
         recyclerView.adapter = adapter
+    }
+
+    private fun setCounter(){
+        counter_plus.setOnClickListener(::incrementCounter)
+        counter_minus.setOnClickListener(::decrementCounter)
     }
 
     private fun incrementCounter(view: View) {
