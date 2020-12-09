@@ -11,10 +11,8 @@ import kotlinx.coroutines.launch
 
 @ExperimentalCoroutinesApi
 class QuoteViewModel(private val mainRepository: MainRepository) : ViewModel() {
-
     private val _countState = MutableStateFlow(0)
     val countState: StateFlow<Int> = _countState
-    val quotes: LiveData<List<Quote>?> = MutableLiveData()
 
     fun increamentState() {
         _countState.value++
